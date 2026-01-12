@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Collaborative Calendar</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<!-- LOGIN SCREEN -->
+<div id="loginScreen" class="login-screen">
+  <div class="login-box">
+    <h2>Calendar Login</h2>
+    <input type="text" id="usernameInput" placeholder="Enter username" />
+    <button onclick="login()">Log In</button>
+  </div>
+</div>
+
+<!-- MAIN APP -->
+<div id="app" class="app hidden">
+
+  <aside class="sidebar">
+    <h3>Calendar</h3>
+    <button onclick="setView('shared')">Team Calendar</button>
+    <button onclick="setView('private')">My Calendar</button>
+    <button onclick="syncWithGoogleCalendar()">Sync Google</button>
+    <button onclick="logout()">Log Out</button>
+  </aside>
+
+  <main class="main">
+    <div class="top-bar">
+      <button id="prevMonth">◀</button>
+      <h2 id="monthYear"></h2>
+      <button id="nextMonth">▶</button>
+    </div>
+
+    <div class="calendar" id="calendar"></div>
+  </main>
+
+</div>
+
+<!-- EVENT MODAL -->
+<div class="modal" id="eventModal">
+  <div class="modal-content">
+    <h3>Add Event</h3>
+    <input type="text" id="eventTitle" placeholder="Title" />
+    <input type="time" id="eventTime" />
+    <textarea id="eventDesc" placeholder="Description"></textarea>
+    <label>
+      <input type="checkbox" id="privateEvent" /> Private
+    </label>
+    <button id="saveEvent">Save</button>
+    <button onclick="closeModal()">Cancel</button>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

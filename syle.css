@@ -1,0 +1,75 @@
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  margin-top: 20px;
+}
+
+.view-toggle {
+  margin: 15px;
+}
+
+.view-toggle button {
+  margin: 5px;
+  padding: 8px 12px;
+}
+
+.calendar-controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.calendar {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  max-width: 700px;
+  margin: 20px auto;
+}
+
+.day {
+  border: 1px solid #ccc;
+  height: 100px;
+  padding: 5px;
+  cursor: pointer;
+  overflow-y: auto;
+}
+
+.day:hover {
+  background-color: #f2f2f2;
+}
+
+.day strong {
+  display: block;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+  background: white;
+  padding: 20px;
+  width: 300px;
+  margin: 100px auto;
+  border-radius: 5px;
+}
+
+.modal-content input,
+.modal-content textarea {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.modal-buttons {
+  display: flex;
+  justify-content: space-between;
+}

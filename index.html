@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Collaborative Calendar</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <h1>Collaborative Scheduling Calendar</h1>
+
+  <div class="view-toggle">
+    <button onclick="setView('shared')">Team Calendar</button>
+    <button onclick="setView('private')">My Private Calendar</button>
+    <button onclick="syncWithGoogleCalendar()">Sync with Google Calendar</button>
+  </div>
+
+  <div class="calendar-controls">
+    <button id="prevMonth">◀</button>
+    <h2 id="monthYear"></h2>
+    <button id="nextMonth">▶</button>
+  </div>
+
+  <div class="calendar" id="calendar"></div>
+
+  <!-- Event Modal -->
+  <div class="modal" id="eventModal">
+    <div class="modal-content">
+      <h3>Add Event</h3>
+
+      <input type="text" id="eventTitle" placeholder="Event title" />
+      <input type="time" id="eventTime" />
+      <textarea id="eventDesc" placeholder="Description"></textarea>
+
+      <label>
+        <input type="checkbox" id="privateEvent" />
+        Private event
+      </label>
+
+      <div class="modal-buttons">
+        <button id="saveEvent" aria-label="Save calendar event">Save</button>
+        <button id="closeModal">Cancel</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
